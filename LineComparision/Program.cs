@@ -1,37 +1,58 @@
-﻿internal class Program
-{
-    private static void Main(string[] args)
+﻿namespace LineComparision {
+    public class Program
     {
-        Console.WriteLine("Welcome line comparision problems");
-        Console.WriteLine("Enter the value of x1, y1:");
-        int x1 = Convert.ToInt32(Console.ReadLine());
-        int y1 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter the value of x2, y2:");
-        int x2 = Convert.ToInt32(Console.ReadLine());
-        int y2 = Convert.ToInt32(Console.ReadLine());
-        double length1 = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        public static int x1, x2, x3, x4, y1, y2, y3, y4;
+        public static double length1, length2;
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome line comparision problems");
+            FindLineComparision();
+            LengthCalculate();
+            Comparision();
+            Console.ReadLine();
+        }
 
-        Console.WriteLine("Welcome line comparision problems");
-        Console.WriteLine("Enter the value of x3, y3:");
-        int x3 = Convert.ToInt32(Console.ReadLine());
-        int y3 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter the value of x4, y4:");
-        int x4 = Convert.ToInt32(Console.ReadLine());
-        int y4 = Convert.ToInt32(Console.ReadLine());
-        double length2 = Math.Sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+        public static void FindLineComparision()
+        {
+            Console.WriteLine("\nEnter the value of x1, y1:");
+            x1 = Convert.ToInt32(Console.ReadLine());
+            y1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the value of x2, y2:");
+            x2 = Convert.ToInt32(Console.ReadLine());
+            int y2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the value of x3, y3:");
+            x3 = Convert.ToInt32(Console.ReadLine());
+            y3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the value of x4, y4:");
+            x4 = Convert.ToInt32(Console.ReadLine());
+            y4 = Convert.ToInt32(Console.ReadLine());
+        }
 
-        if (length1 > length2)
+        public static void LengthCalculate()
         {
-            Console.WriteLine("Line 1 is greater than Line 2");
+            length1 = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+            length2 = Math.Sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+            Console.WriteLine("\nlength of line1 is:" + length1);
+            Console.WriteLine("\nLength of line2 is:" + length2);
         }
-        else if (length2 > length1)
+        public static void Comparision()
         {
-            Console.WriteLine("Line 2 is greater than Line 1");
+            if (length1 > length2)
+            {
+                Console.WriteLine("\nLine 1 is greater than Line 2");
+            }
+            else if (length2 > length1)
+            {
+                Console.WriteLine("\nLine 2 is greater than Line 1");
+            }
+            else if(length1 == length2)
+            {
+                Console.WriteLine("\nThe Two lines are equal");
+            }
+            else
+            {
+                Console.WriteLine("\nThe Two lines are not equal");
+            }
         }
-        else
-        {
-            Console.WriteLine("The Two lines are equal");
-        }
-        Console.ReadLine();
     }
 }
