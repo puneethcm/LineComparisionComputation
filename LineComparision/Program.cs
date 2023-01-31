@@ -42,7 +42,7 @@
 
         public static void Comparision()
         {
-            if (length1.CompareTo(length2)==1)
+            if (length1.CompareTo(length2) == 1)
             {
                 Console.WriteLine("\nThe Two lines are not equal");
                 Console.WriteLine("\nLine 1 is greater than Line 2");
